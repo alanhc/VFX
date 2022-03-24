@@ -18,8 +18,8 @@ try:
     os.mkdir(os.path.join("./output/", sys.argv[1]))
 except:
     print("Directory exists.")
-os.popen("cp " + files[0] + " " + os.path.join("./output/",
-         sys.argv[1], os.path.basename(files[0])))
+os.popen("cp " + files[7] + " " + os.path.join("./output/",
+         sys.argv[1], os.path.basename(files[7])))
 
 
 def ImageShrink2(img):
@@ -97,14 +97,16 @@ def getExpShift(img1, img2, shiftBits):
     return shift_ret
 
 
-level = 7
-image_shifted = []
-g1 = cv2.cvtColor(images[0], cv2.COLOR_BGR2GRAY)
-for i in range(1, len(images)):
+level = 2
+image_shifted = [0] * len(images)
+g1 = cv2.cvtColor(images[7], cv2.COLOR_BGR2GRAY)
+for i in range(0, len(images)):
+    if i == 7:
+        continue
     g2 = cv2.cvtColor(images[i], cv2.COLOR_BGR2GRAY)
     x, y = getExpShift(g1, g2, level)
-    image_shifted.append(BitmapShift(images[i], x, y))
+    image_shifted[i] = BitmapShift(images[i], x, y)
     # print("out/"+os.path.basename(files[i]))
     cv2.imwrite(os.path.join(
-        "./output/", sys.argv[1], os.path.basename(files[i])), image_shifted[i-1])
+        "./output/", sys.argv[1], os.path.basename(files[i])), image_shifted[i])
     print(x, y)
