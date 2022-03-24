@@ -165,10 +165,10 @@ draw_response_curve(gs)
 ln_radiance_map = construct_radiance_map(raw_images, B, gs, w)
 
 for i in range(3):
+    plt.clf()
     plt.imshow(ln_radiance_map[:, :, i], cmap="jet")
     plt.colorbar()
     plt.savefig(os.path.join(output_path, "radiance_map{0}.png".format(i)))
-    plt.clf()
 
 radiance_map = np.exp(ln_radiance_map)
 cv2.imwrite(os.path.join(output_path, args.out + '.hdr'),
