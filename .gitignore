@@ -60,3 +60,6 @@ docs/source/changelog.md
 data/
 output/
 result/
+*.zip
+
+hw2-Stitching/data/
