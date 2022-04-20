@@ -1,0 +1,117 @@
+commit 29eda46f62e25a7cd27eebe72a6c4386c8401d0f
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Thu Apr 14 21:18:27 2022 +0800
+
+    a
+
+commit 8ffe3faa388dc40cb8819ba35266d51fe1838df3
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Thu Apr 14 21:17:06 2022 +0800
+
+    warp 2
+
+commit e0cd3ed133715369f1c70a50dac90d07ec0e2824
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Thu Apr 14 20:39:15 2022 +0800
+
+    warp func 2
+
+commit 358bdbf0b046af241c7f277cebdc6f5485be481b
+Author: Hsiang <sam880222@gmail.com>
+Date:   Thu Apr 14 00:31:50 2022 +0800
+
+    hw2
+
+commit 2549b054b9fcdc138e102aea54a2fbac2db2689f
+Merge: 136d3d0 c76e3e8
+Author: Hsiang <sam880222@gmail.com>
+Date:   Thu Mar 24 17:21:03 2022 +0800
+
+    Merge branch 'main' of https://github.com/alanhc/VFX
+    
+    # Conflicts:
+    #       hw1-HDR/hdr.py
+
+commit 136d3d08fb2d6dbdce5220a3467b2356440ab0fb
+Author: Hsiang <sam880222@gmail.com>
+Date:   Thu Mar 24 17:19:16 2022 +0800
+
+    no message
+
+commit c76e3e84f1c453cd045a0a48c34682c27b8038b7
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Thu Mar 24 15:43:59 2022 +0800
+
+    add auto install dataset
+
+commit e48dfbc0ff7ba839a3a380a29b108312ceee238b
+Author: Hsiang <sam880222@gmail.com>
+Date:   Thu Mar 24 15:01:46 2022 +0800
+
+    no message
+
+commit 79e0321e4456bda3bda53721e8549742a4298265
+Author: Hsiang <sam880222@gmail.com>
+Date:   Thu Mar 24 15:00:18 2022 +0800
+
+    Convert ipynb to py
+
+commit 064c97056001fbae845ce6de200801bdb50f11d0
+Author: Hsiang <sam880222@gmail.com>
+Date:   Thu Mar 24 00:44:35 2022 +0800
+
+    Bug fixes
+
+commit 44eeceab0f1d4c864b9b7966cd05273bf25be8ba
+Author: Hsiang <sam880222@gmail.com>
+Date:   Wed Mar 23 00:29:28 2022 +0800
+
+    done radiance mapping
+
+commit 743572a1a0db8a242a0cb25227d9070460424a9d
+Author: Hsiang <sam880222@gmail.com>
+Date:   Mon Mar 21 18:21:06 2022 +0800
+
+    add sample images
+
+commit c0b7ea0106209bbe435dca9c22bf9abf480e160b
+Author: Hsiang <sam880222@gmail.com>
+Date:   Sun Mar 20 00:06:05 2022 +0800
+
+    separate RGB & debug
+
+commit 30dd7a232ccdf9177a0d70c6080985c9c8983636
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Fri Mar 18 18:45:59 2022 +0800
+
+    3/18 18:45
+
+commit e926df2e3f8285d59ebcfc93c86a228c13737369
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Fri Mar 18 18:19:51 2022 +0800
+
+    3/18 18:19
+
+commit 6c5e6e35aff2ff3157c304bf167eec4a44b50cbb
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Fri Mar 18 11:28:27 2022 +0800
+
+    3/18/11:26
+
+commit a2a66fc21bc4db8510d7e29acc6090ba1fbe0576
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Thu Mar 17 18:32:54 2022 +0800
+
+    3/17/6/32
+
+commit d6a364b18a5d7c1e48651014a7255619b494d4b9
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Fri Mar 4 16:52:08 2022 +0800
+
+    3/4 mtd alg (not check)
+
+commit c4072fb52296bebced64d4b02448aa6c671e1658
+Author: alanhc <alanhc.tseng1999@gmail.com>
+Date:   Thu Mar 3 23:02:33 2022 +0800
+
+    3/3
