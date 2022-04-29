@@ -34,10 +34,6 @@ def ComputeBitmaps(img):
     """
     compute median threshold bitmap and exclusion bitmap
     """
-    # m = int(np.median(img))
-    # threshold_bitmap = cv2.threshold(img, m, 255, cv2.THRESH_BINARY)[1]
-
-    # exclusion_bitmap = 255 - cv2.inRange(img, m - 2, m + 2)
 
     threshold = 2
     median = int(np.median(img))
@@ -45,17 +41,6 @@ def ComputeBitmaps(img):
     exclusion_bitmap = np.where(
         np.abs(img - median) <= threshold, 0, 255).astype(np.uint8)
     return threshold_bitmap, exclusion_bitmap
-    # med = int(np.median(img))
-    # thresBitmap = np.array(
-    #     [[True if yi > med else False for yi in xi] for xi in img], dtype='bool')
-    # x, y = img.shape
-    # excluBitmap = np.full((x, y), True, dtype='bool')
-    # for i in range(x):
-    #     for j in range(y):
-    #         if abs(img[i][j] - med) < 5:
-    #             excluBitmap[i][j] = False
-
-    # return thresBitmap, excluBitmap
 
 
 def BitmapShift(bm, x, y):
