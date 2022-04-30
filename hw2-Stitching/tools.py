@@ -51,7 +51,7 @@ def harris(gray_img, ksize, gksize, k):
     
     return R, orientation
 
-def get_keypoints_and_orientations(img_warp, ksize, gksize, k, threshold):
+def feature_detection(img_warp, ksize, gksize, k, threshold):
     gray_images = []
     harris_images = []
     key_points_all = []

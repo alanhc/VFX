@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import argparse
-from tools import warp, harris, get_keypoints_and_orientations, SIFT_descriptor, feature_matching
+from tools import warp, harris, feature_detection, SIFT_descriptor, feature_matching
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--input", help="Path to the input images", type=str, required=True)
@@ -23,7 +23,7 @@ img_warp = [warp(img, focal_len) for img in images]
 
 
 
-gray_images, harris_images, key_points_all, orientations = get_keypoints_and_orientations(img_warp, 3, 3, 0.05, 1) # img_warp, ksize, gksize, k, threshold
+gray_images, harris_images, key_points_all, orientations = feature_detection(img_warp, 3, 3, 0.05, 1) # img_warp, ksize, gksize, k, threshold
 
 descriptors = []
 if (args.cache):
@@ -41,3 +41,4 @@ else:
         descriptors.append( descriptor )
     
 matches, dists = feature_matching(descriptors)
+print(matches)
