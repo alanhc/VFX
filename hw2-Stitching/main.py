@@ -23,7 +23,7 @@ img_warp = [warp(img, focal_len) for img in images]
 
 
 
-gray_images, harris_images, key_points_all, orientations = feature_detection(img_warp, 3, 3, 0.05, 1) # img_warp, ksize, gksize, k, threshold
+gray_images, harris_images, key_points_all, orientations = feature_detection(img_warp, 3, 3, 0.05, 0.02) # img_warp, ksize, gksize, k, threshold
 
 descriptors = []
 if (args.cache):

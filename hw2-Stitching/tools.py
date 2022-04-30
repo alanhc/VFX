@@ -70,8 +70,8 @@ def feature_detection(img_warp, ksize, gksize, k, threshold):
         labeled_img = img.copy()
         dilate_img[:20,:] = 0
         dilate_img[-20:,:] = 0
-        labeled_img[ dilate_img>0.02*dilate_img.max() ] = [0, 0, 255]
-        key_points = np.where(dilate_img>0.02*dilate_img.max())
+        labeled_img[ dilate_img>threshold*dilate_img.max() ] = [0, 0, 255]
+        key_points = np.where(dilate_img>threshold*dilate_img.max())
         key_points = np.flip(key_points, 0).T
         key_points_all.append(key_points)
 
