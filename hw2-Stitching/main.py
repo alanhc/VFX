@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import argparse
-from tools import warp, harris, get_keypoints_and_orientations, SIFT_descriptor, match
+from tools import warp, harris, get_keypoints_and_orientations, SIFT_descriptor, feature_matching
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--input", help="Path to the input images", type=str, required=True)
@@ -40,5 +40,4 @@ else:
             np.save(f, descriptor)
         descriptors.append( descriptor )
     
-matches = match(descriptors)
-print(matches)
+matches, dists = feature_matching(descriptors)
