@@ -51,7 +51,7 @@ def harris(gray_img, ksize, gksize, k):
     
     return R, orientation
 
-def get_keypoints_and_orientations(img_warp, ksize, gksize, k, threshold):
+def feature_detection(img_warp, ksize, gksize, k, threshold):
     gray_images = []
     harris_images = []
     key_points_all = []
@@ -70,14 +70,13 @@ def get_keypoints_and_orientations(img_warp, ksize, gksize, k, threshold):
         labeled_img = img.copy()
         dilate_img[:20,:] = 0
         dilate_img[-20:,:] = 0
-        labeled_img[ dilate_img>0.02*dilate_img.max() ] = [0, 0, 255]
-        key_points = np.where(dilate_img>0.02*dilate_img.max())
+        labeled_img[ dilate_img>threshold*dilate_img.max() ] = [0, 0, 255]
+        key_points = np.where(dilate_img>threshold*dilate_img.max())
         key_points = np.flip(key_points, 0).T
         key_points_all.append(key_points)
 
         harris_images.append(harris_img) 
     return gray_images, harris_images, key_points_all, orientations 
-
 
 def SIFT_descriptor(image, keypoints, orientations):
     # The orientation histograms have 8 bins
@@ -104,6 +103,8 @@ def SIFT_descriptor(image, keypoints, orientations):
     for keypoint in keypoints:
         ## TODO
         x, y = keypoint
+        x = np.clip(x, 0, image.shape[1]-1)
+        y = np.clip(y, 0, image.shape[0]-1)
         orientation = orientations[y][x]
 
         M = np.array([
@@ -163,8 +164,11 @@ def SIFT_descriptor(image, keypoints, orientations):
     
     return descriptors
 
-def match(descriptors):
+
+def feature_matching(descriptors):
     matches = []
+    dists = []
+
     n_img = len(descriptors) # number of images
     n_feat = len(descriptors[0]) # number of features
     for i in range(n_img - 1):
@@ -173,13 +177,14 @@ def match(descriptors):
         dist, idx = kdtree.query( np.array(descriptors[i+1]).reshape((len(descriptors[i+1]), 128)), k = 2 )
         #print(idx)
         
-        dist_ratio = dist[:, 0] / dist[:, 1]
+        dist_ratio = dist[:, 0] - dist[:, 1] * 0.8
+        # match_idx = np.argwhere(dist_ratio < 0)
         # print(dist_ratio)
         match = idx[:, 0]
-        match[dist_ratio == float('nan')] = -1
-        match[dist_ratio >= 0.8] = -1
+        match[dist_ratio >= 0] = -1
         matches.append(match)
+        dists.append(dist[:, 0])
         # print(match)
         # if (dist[1] != 0 and dist[0] / dist[1] < 0.8):
         #     matches.append( idx )
-    return matches
+    return matches, dists
